@@ -1,7 +1,7 @@
-# Python SDK: StorageVirtualizeAPI Wrapper
+# IBM Spectrum Virtualize REST API Python Client
 
 ## Overview
-This repo contains a Python SDK wrapper around `storage_virtualize_api.py` for interacting with the REST Storage Virtualize API from Python.
+This repo contains a Python SDK around `storage_virtualize_api.py` for interacting with the IBM Storage Virtualize REST API.
 
 ## Install
 1. Ensure Python 3.9+
