@@ -1,4 +1,4 @@
-# IBM Storage Virtualize REST API - Python SDK Customer Guide
+# IBM Storage Virtualize REST API - Python SDK Usage Guide
 
 ## Table of Contents
 

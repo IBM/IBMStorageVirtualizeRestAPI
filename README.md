@@ -1,13 +1,17 @@
 # IBM Spectrum Virtualize REST API Python Client
 
 ## Overview
-This repo contains a Python SDK around `storage_virtualize_api.py` for interacting with the IBM Storage Virtualize REST API.
+This repo contains a Python SDK for interacting with the IBM Storage Virtualize REST API.
 
 ## Install
 1. Ensure Python 3.9+
 2. Install dependencies (if any) using pip:
 ```bash
 pip install -r requirements.txt
+```
+3. Install SDK using pip:
+```bash
+pip install ibm-svc-rest-client
 ```
 
 ## Usage
@@ -34,6 +38,10 @@ except ApiException as ex:
 
 
 ```
+
+## Documentation
+
+For detailed documentation, refer https://github.com/IBM/IBMStorageVirtualizeRestAPI/blob/main/IBM_REST_SDK_USAGE_GUIDE.md
 
 ## Configuration
 - `base_url`: API endpoint
