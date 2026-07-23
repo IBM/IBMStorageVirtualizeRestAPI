@@ -14,6 +14,13 @@ pip install -r requirements.txt
 pip install ibm-svc-rest-client
 ```
 
+or Manual Installation:
+```bash
+git clone https://github.com/IBM/IBMStorageVirtualizeRestAPI.git
+cd IBMStorageVirtualizeRestAPI
+pip install .
+```
+
 ## Usage
 ## Detailed usage examples (copy into your application code).  Adjust model types and fields to your generated SDK version. These examples are intentionally verbose to show common patterns.
 ```python
