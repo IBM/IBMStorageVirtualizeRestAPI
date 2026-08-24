@@ -40,19 +40,24 @@ class StorageVirtualizeAPI:
       If you create long-lived clients, prefer reusing HTTP client and disposing when your application shuts down.
     """
     
-    def __init__(self, ip_address: str, username_or_token: str, password: Optional[str] = None):
+    def __init__(self, ip_address: str, username_or_token: str, password: Optional[str] = None,
+                 verify_ssl: bool = True):
         """
         Initialize the StorageVirtualizeAPI with either username/password or access token.
-        
+
         Args:
             ip_address: The IP address of the server
             username_or_token: Username (if password provided) or access token (if password is None)
             password: Password for authentication (optional, if None then username_or_token is treated as token)
+            verify_ssl: Whether to verify the server's SSL certificate (default True).
+                        Set to False only when the array uses a self-signed certificate and
+                        no CA bundle is available.
         """
         baseurl = f"https://{ip_address}:7443/rest/v1"
         config = Configuration()
         config.host = baseurl
-        
+        config.verify_ssl = verify_ssl
+
         if password is not None:
             # Constructor with username and password
             config.username = username_or_token

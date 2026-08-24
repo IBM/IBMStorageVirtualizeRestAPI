@@ -81,10 +81,17 @@ class RESTClientObject:
         # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
 
         # cert_reqs
+        # urllib3 v2 no longer accepts cert_reqs as a PoolManager keyword — it is
+        # silently ignored, so self-signed certs fail even when verify_ssl=False.
+        # The correct approach for urllib3 v2 is to supply an SSLContext directly.
         if configuration.verify_ssl:
             cert_reqs = ssl.CERT_REQUIRED
+            ssl_context = None
         else:
             cert_reqs = ssl.CERT_NONE
+            ssl_context = ssl.create_default_context()
+            ssl_context.check_hostname = False
+            ssl_context.verify_mode = ssl.CERT_NONE
 
         pool_args = {
             "cert_reqs": cert_reqs,
@@ -93,6 +100,8 @@ class RESTClientObject:
             "key_file": configuration.key_file,
             "ca_cert_data": configuration.ca_cert_data,
         }
+        if ssl_context is not None:
+            pool_args["ssl_context"] = ssl_context
         if configuration.assert_hostname is not None:
             pool_args['assert_hostname'] = (
                 configuration.assert_hostname
