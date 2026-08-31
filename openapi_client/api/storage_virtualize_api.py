@@ -40,7 +40,7 @@ class StorageVirtualizeAPI:
       If you create long-lived clients, prefer reusing HTTP client and disposing when your application shuts down.
     """
     
-    def __init__(self, ip_address: str, username_or_token: str, password: Optional[str] = None):
+    def __init__(self, ip_address: str, username_or_token: str, password: Optional[str] = None, configuration: Optional[Configuration] = None):
         """
         Initialize the StorageVirtualizeAPI with either username/password or access token.
         
@@ -48,9 +48,13 @@ class StorageVirtualizeAPI:
             ip_address: The IP address of the server
             username_or_token: Username (if password provided) or access token (if password is None)
             password: Password for authentication (optional, if None then username_or_token is treated as token)
+            configuration: Optional custom Configuration object (e.g., to disable SSL).
         """
         baseurl = f"https://{ip_address}:7443/rest/v1"
-        config = Configuration()
+        if configuration is not None:
+            config = configuration
+        else:
+            config = Configuration()
         config.host = baseurl
         
         if password is not None:
