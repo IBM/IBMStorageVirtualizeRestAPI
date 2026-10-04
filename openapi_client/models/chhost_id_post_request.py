@@ -69,7 +69,8 @@ class ChhostIdPostRequest(BaseModel):
     suppressofflinealert: Optional[StrictStr] = None
     forceautozone: Optional[StrictBool] = None
     force: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["name", "type", "chapsecret", "hostsecret", "nochapsecret", "nohostsecret", "storagesecret", "nostoragesecret", "site", "nosite", "iscsiusername", "hostusername", "storageusername", "statuspolicy", "statussite", "ownershipgroup", "noownershipgroup", "portset", "autostoragediscovery", "partition", "draftpartition", "nopartition", "nodraftpartition", "location", "nolocation", "suppressofflinealert", "forceautozone", "force"]
+    protocol: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["name", "type", "chapsecret", "hostsecret", "nochapsecret", "nohostsecret", "storagesecret", "nostoragesecret", "site", "nosite", "iscsiusername", "hostusername", "storageusername", "statuspolicy", "statussite", "ownershipgroup", "noownershipgroup", "portset", "autostoragediscovery", "partition", "draftpartition", "nopartition", "nodraftpartition", "location", "nolocation", "suppressofflinealert", "forceautozone", "force", "protocol"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -149,7 +150,8 @@ class ChhostIdPostRequest(BaseModel):
             "nolocation": obj.get("nolocation"),
             "suppressofflinealert": obj.get("suppressofflinealert"),
             "forceautozone": obj.get("forceautozone"),
-            "force": obj.get("force")
+            "force": obj.get("force"),
+            "protocol": obj.get("protocol"),
         })
         return _obj
 
