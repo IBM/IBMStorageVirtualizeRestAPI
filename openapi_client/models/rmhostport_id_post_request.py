@@ -42,7 +42,9 @@ class RmhostportIdPostRequest(BaseModel):
     RmhostportIdPostRequest
     """ # noqa: E501
     fcwwpn: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["fcwwpn"]
+    iscsiname: Optional[StrictStr] = None
+    nqn: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["fcwwpn", "iscsiname", "nqn"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,7 +97,9 @@ class RmhostportIdPostRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "fcwwpn": obj.get("fcwwpn")
+            "fcwwpn": obj.get("fcwwpn"),
+            "iscsiname": obj.get("iscsiname"),
+            "nqn": obj.get("nqn"),
         })
         return _obj
 
