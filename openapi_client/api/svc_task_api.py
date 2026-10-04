@@ -227,6 +227,7 @@ from openapi_client.models.rmfcportsetmember_post_request import Rmfcportsetmemb
 from openapi_client.models.rmhost_id_post_request import RmhostIdPostRequest
 from openapi_client.models.rmhostcluster_id_post_request import RmhostclusterIdPostRequest
 from openapi_client.models.rmhostclustermember_id_post_request import RmhostclustermemberIdPostRequest
+from openapi_client.models.rmhostiogrp_id_post_request import RmhostiogrpIdPostRequest
 from openapi_client.models.rmhostport_id_post_request import RmhostportIdPostRequest
 from openapi_client.models.rmmdisk_id_post_request import RmmdiskIdPostRequest
 from openapi_client.models.rmmdiskgrp_id_post_request import RmmdiskgrpIdPostRequest
@@ -67253,6 +67254,258 @@ class SVCTaskApi:
             _request_auth=_request_auth
         )
 
+
+
+
+    @validate_call
+    def rmhostiogrp_id_post(
+        self,
+        id: StrictStr,
+        x_auth_token: Optional[StrictStr] = None,
+        rmhostiogrp_id_post_request: Optional[RmhostiogrpIdPostRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> object:
+        """rmhostiogrp_id_post
+
+        >  Use the rmhostiogrp command to remove one or more I/O groups from an existing host object.   ```  Syntax  >>-rmhostiogrp-- -iogrp--io_group_id_or_name_list--host_name_or_id--><  ```
+
+        :param id: (required)
+        :type id: str
+        :param x_auth_token:
+        :type x_auth_token: str
+        :param rmhostiogrp_id_post_request:
+        :type rmhostiogrp_id_post_request: RmhostiogrpIdPostRequest
+        :param _request_timeout: timeout setting for this request.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._rmhostiogrp_id_post_serialize(
+            id=id,
+            x_auth_token=x_auth_token,
+            rmhostiogrp_id_post_request=rmhostiogrp_id_post_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '400': "Error",
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def rmhostiogrp_id_post_with_http_info(
+        self,
+        id: StrictStr,
+        x_auth_token: Optional[StrictStr] = None,
+        rmhostiogrp_id_post_request: Optional[RmhostiogrpIdPostRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[object]:
+        """rmhostiogrp_id_post
+
+        >  Use the rmhostiogrp command to remove one or more I/O groups from an existing host object.
+
+        :param id: (required)
+        :type id: str
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._rmhostiogrp_id_post_serialize(
+            id=id,
+            x_auth_token=x_auth_token,
+            rmhostiogrp_id_post_request=rmhostiogrp_id_post_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '400': "Error",
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def rmhostiogrp_id_post_without_preload_content(
+        self,
+        id: StrictStr,
+        x_auth_token: Optional[StrictStr] = None,
+        rmhostiogrp_id_post_request: Optional[RmhostiogrpIdPostRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """rmhostiogrp_id_post
+
+        >  Use the rmhostiogrp command to remove one or more I/O groups from an existing host object.
+
+        :param id: (required)
+        :type id: str
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._rmhostiogrp_id_post_serialize(
+            id=id,
+            x_auth_token=x_auth_token,
+            rmhostiogrp_id_post_request=rmhostiogrp_id_post_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "object",
+            '400': "Error",
+            '401': "Error",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _rmhostiogrp_id_post_serialize(
+        self,
+        id,
+        x_auth_token,
+        rmhostiogrp_id_post_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+        _collection_formats: Dict[str, str] = {}
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        if id is not None:
+            _path_params['id'] = id
+        if x_auth_token is not None:
+            _header_params['X-Auth-Token'] = x_auth_token
+        if rmhostiogrp_id_post_request is not None:
+            _body_params = rmhostiogrp_id_post_request
+
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                ['application/json', 'text/html']
+            )
+
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(['application/json'])
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        _auth_settings: List[str] = []
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/rmhostiogrp/{id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
 
 
 
