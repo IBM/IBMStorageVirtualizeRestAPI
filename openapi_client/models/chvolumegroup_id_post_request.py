@@ -65,7 +65,8 @@ class ChvolumegroupIdPostRequest(BaseModel):
     retainbackupenabled: Optional[StrictBool] = None
     nodrreplication: Optional[StrictBool] = None
     issyncdr: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["name", "ownershipgroup", "noownershipgroup", "safeguardedpolicy", "nosafeguardedpolicy", "policystarttime", "replicationpolicy", "purpose1", "purpose2", "purpose3", "purpose4", "druserconfig", "drusershadow", "druserconfigdiverged", "snapshotpolicy", "safeguarded", "nosnapshotpolicy", "draftpartition", "nodraftpartition", "ignoreuserfcmaps", "snapshotbuffer", "retainbackupenabled", "nodrreplication", "issyncdr"]
+    noreplicationpolicy: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["name", "ownershipgroup", "noownershipgroup", "safeguardedpolicy", "nosafeguardedpolicy", "policystarttime", "replicationpolicy", "purpose1", "purpose2", "purpose3", "purpose4", "druserconfig", "drusershadow", "druserconfigdiverged", "snapshotpolicy", "safeguarded", "nosnapshotpolicy", "draftpartition", "nodraftpartition", "ignoreuserfcmaps", "snapshotbuffer", "retainbackupenabled", "nodrreplication", "issyncdr", "noreplicationpolicy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -141,7 +142,8 @@ class ChvolumegroupIdPostRequest(BaseModel):
             "snapshotbuffer": obj.get("snapshotbuffer"),
             "retainbackupenabled": obj.get("retainbackupenabled"),
             "nodrreplication": obj.get("nodrreplication"),
-            "issyncdr": obj.get("issyncdr")
+            "issyncdr": obj.get("issyncdr"),
+            "noreplicationpolicy": obj.get("noreplicationpolicy"),
         })
         return _obj
 
