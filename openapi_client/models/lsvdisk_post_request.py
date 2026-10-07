@@ -43,7 +43,8 @@ class LsvdiskPostRequest(BaseModel):
     """ # noqa: E501
     filtervalue: Optional[StrictStr] = None
     unit: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["filtervalue", "unit"]
+    bytes: Optional[bool] = None
+    __properties: ClassVar[List[str]] = ["filtervalue", "unit", "bytes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,7 +98,8 @@ class LsvdiskPostRequest(BaseModel):
 
         _obj = cls.model_validate({
             "filtervalue": obj.get("filtervalue"),
-            "unit": obj.get("unit")
+            "unit": obj.get("unit"),
+            "bytes": obj.get("bytes")
         })
         return _obj
 
