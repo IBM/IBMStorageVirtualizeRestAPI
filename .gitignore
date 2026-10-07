@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Testing & tool caches
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Local testing scripts
+test_ls_commands_live.py
