@@ -7,10 +7,10 @@ authors = [
 ]
 readme = "README.md"
 keywords = ["IBM", "IBM Storage Virtualize REST API", "Python", "SDK", "REST", "RESTAPI"]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 dependencies = [
-  "urllib3 (>=2.1.0,<3.0.0)",
+  "urllib3 (>=2.8.0,<3.0.0)",
   "python-dateutil (>=2.8.2)",
   "pydantic (>=2)",
   "typing-extensions (>=4.7.1)",

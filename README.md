@@ -4,7 +4,7 @@
 This repo contains a Python SDK for interacting with the IBM Storage Virtualize REST API.
 
 ## Install
-1. Ensure Python 3.9+
+1. Ensure Python 3.10+
 2. Install dependencies (if any) using pip:
 ```bash
 pip install -r requirements.txt

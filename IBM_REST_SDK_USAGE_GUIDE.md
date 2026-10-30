@@ -45,7 +45,7 @@ The IBM Storage Virtualize REST API Python SDK provides a comprehensive, easy-to
 
 ### Prerequisites
 
-- **Python:** Version 3.9 or higher
+- **Python:** Version 3.10 or higher
 - **Network Access:** HTTPS connectivity to your Storage Virtualize system (port 7443)
 - **Credentials:** Valid username and password with appropriate permissions
 - **System Requirements:** IBM Storage Virtualize 9.1.3.0 system with REST API enabled
