@@ -143,7 +143,7 @@ If you already have a valid token:
 ```python
 svc = StorageVirtualizeAPI(
     ip_address="10.0.0.1",
-    username_or_token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    username_or_token="<username_or_token>",
     password=None  # No password needed
 )
 ```
